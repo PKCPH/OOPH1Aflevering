@@ -15,7 +15,7 @@ namespace OOPH1Aflevering.Codes
 
     internal class MotorVehicleList
     {
-        public List<Car> Cars { get; set; }
+        public List<Car>? Cars { get; set; }
     }
 
 }

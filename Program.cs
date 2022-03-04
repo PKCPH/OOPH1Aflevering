@@ -23,12 +23,12 @@
 //////////////////////////////////
 //Svar: Ja
 
-Audi audi = new Audi()
-{
-    Horsepower = 563,
-    Brand = "Audi",
-    Model = "A8"
-};
+//Audi audi = new Audi()
+//{
+//    Horsepower = 563,
+//    Brand = "Audi",
+//    Model = "A8"
+//};
 
 
 //////////////////////////////////
@@ -36,10 +36,10 @@ Audi audi = new Audi()
 //////////////////////////////////
 //Svar: Nej
 
-MotorVehicle motorVehicle = new MotorVehicle()
-{
-    Horsepower = 563
-};
+//MotorVehicle motorVehicle = new MotorVehicle()
+//{
+//    Horsepower = 563
+//};
 
 
 
@@ -52,19 +52,19 @@ MotorVehicle motorVehicle = new MotorVehicle()
 //////////////////////////////////
 ///Svar:
 
-MotorVehicleList motorVehicleList = new()
-{
-    Cars = new List<Car>()
-    {
+//MotorVehicleList motorVehicleList = new()
+//{
+//    Cars = new List<Car>()
+//    {
 
-        new Car() { Brand = "Toyota", Model = "Aygo", Horsepower = 60 },
+//        new Car() { Brand = "Toyota", Model = "Aygo", Horsepower = 60 },
 
-        new Car() { Brand = "Fiat", Model = "Punto", Horsepower = 90 },
+//        new Car() { Brand = "Fiat", Model = "Punto", Horsepower = 90 },
 
-        new Car() { Brand = "Audi", Model = "A6", Horsepower = 175 }
+//        new Car() { Brand = "Audi", Model = "A6", Horsepower = 175 }
 
-    }
-};
+//    }
+//};
 
 
 //////////////////////////////////
@@ -74,19 +74,19 @@ MotorVehicleList motorVehicleList = new()
 
 
 
-List<Car> HorsepowerOver60List = 
-    motorVehicleList.Cars.Where(obj => obj.Horsepower > 60).ToList();
+//List<Car> HorsepowerOver60List = 
+//    motorVehicleList.Cars.Where(obj => obj.Horsepower > 60).ToList();
 
-Console.WriteLine("Cars with horsepower over 60:");
+//Console.WriteLine("Cars with horsepower over 60:");
 
-foreach (Car car in HorsepowerOver60List)
-{
-    Console.WriteLine
-        (
-        $"{car.Brand} {car.Model} - " +
-        $"Horsepower: {car.Horsepower}"
-        );
-}
+//foreach (Car car in HorsepowerOver60List)
+//{
+//    Console.WriteLine
+//        (
+//        $"{car.Brand} {car.Model} - " +
+//        $"Horsepower: {car.Horsepower}"
+//        );
+//}
 
 
 //////////////////////////////////
@@ -94,21 +94,21 @@ foreach (Car car in HorsepowerOver60List)
 //////////////////////////////////
 ///Svar:
 
-List<Car> AudiList = 
-    motorVehicleList.Cars.Where(obj => obj.Brand.Contains("Audi")).ToList();
+//List<Car> AudiList = 
+//    motorVehicleList.Cars.Where(obj => obj.Brand.Contains("Audi")).ToList();
 
-Console.WriteLine();
+//Console.WriteLine();
 
-Console.WriteLine("Cars from Audi:");
+//Console.WriteLine("Cars from Audi:");
 
-foreach(Car car in AudiList)
-{
-    Console.WriteLine
-        (
-        $"{car.Brand} {car.Model} - " +
-        $"Horsepower: {car.Horsepower}"
-        );
-}
+//foreach(Car car in AudiList)
+//{
+//    Console.WriteLine
+//        (
+//        $"{car.Brand} {car.Model} - " +
+//        $"Horsepower: {car.Horsepower}"
+//        );
+//}
 
 
 //////////////////////////////////////////////////////////////////// 3/5
@@ -163,3 +163,44 @@ foreach(Car car in AudiList)
 //////////////////////////////////
 
 //Svar: SetSyn har to metoder og er derfor Overload
+
+//welcome
+Console.WriteLine("Vælg uddannelseslinje\n" +
+    "1) Programmering\n" +
+    "2) Support\n" +
+    "3) Infrastruktur\n" +
+    "\n" +
+    "Vælg 1, 2 eller 3");
+
+SchoolingCategory schoolingCategory = new();
+
+List<TECPerson> tecpersons = new();
+
+//Compiler Error CS1503 Argument1 cannot convert
+Course course = new(schoolingCategory);
+
+//menu choice
+var menu = Convert.ToInt32(Console.ReadLine());
+switch (menu)
+{
+
+    case 1:
+        course.SchoolingName = SchoolingCategory.Programmeringslinje;
+        course.SetCourses();
+        break;
+
+    case 2:
+
+        course.SchoolingName = SchoolingCategory.Supporterlinje;
+        course.SetCourses();
+        break;
+
+    case 3:
+
+        course.SchoolingName = SchoolingCategory.Infrastrukturlinje;
+        course.SetCourses();
+        break;
+
+}
+
+Console.ReadKey();
